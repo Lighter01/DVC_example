@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: src/prepare.py
+      hash: md5
+      md5: a0ef28d36b5e9ca1df8b0500f9ece064
+      size: 633
+    outs:
+    - path: data/prepared
+      hash: md5
+      md5: 1adf4b1a6a6ca2ccea2635d057f33a88.dir
+      size: 2966
+      nfiles: 2
+  train:
+    cmd: python src/train.py data/prepared/train.csv models/logistic_regression.pkl
+    deps:
+    - path: data/prepared/train.csv
+      hash: md5
+      md5: c8ebb7813743c290f4cb6a8b6574a907
+      size: 2053
+    - path: src/train.py
+      hash: md5
+      md5: 58a53e7460ec70c36c2f8958847a09d6
+      size: 1552
+    outs:
+    - path: models/logistic_regression.pkl
+      hash: md5
+      md5: 17a5055a90bf0d259cbe6469326f0760
+      size: 1071
+  test:
+    cmd: python src/test.py data/prepared/test.csv models/logistic_regression.pkl
+    deps:
+    - path: data/prepared/test.csv
+      hash: md5
+      md5: 03b7c28c42ed1a4eae408c3178ec9dbf
+      size: 913
+    - path: models/logistic_regression.pkl
+      hash: md5
+      md5: 17a5055a90bf0d259cbe6469326f0760
+      size: 1071
+    - path: src/test.py
+      hash: md5
+      md5: c3c1897b2839d0178a7929d6b0ce7331
+      size: 2253
