@@ -18,8 +18,6 @@ stages:
     - data/prepared/test.csv
     - models/logistic_regression.pkl
     - src/test.py
-    outs:
-    - plots
 plots:
 - dvclive/plots/sklearn/test_confusion_matrix.json:
     template: confusion
