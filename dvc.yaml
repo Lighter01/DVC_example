@@ -1,0 +1,37 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - src/prepare.py
+    outs:
+    - data/prepared
+  train:
+    cmd: python src/train.py data/prepared/train.csv models/logistic_regression.pkl
+    deps:
+    - data/prepared/train.csv
+    - src/train.py
+    outs:
+    - models/logistic_regression.pkl
+  test:
+    cmd: python src/test.py data/prepared/test.csv models/logistic_regression.pkl
+    deps:
+    - data/prepared/test.csv
+    - models/logistic_regression.pkl
+    - src/test.py
+    outs:
+    - plots
+plots:
+- dvclive/plots/sklearn/test_confusion_matrix.json:
+    template: confusion
+    x: actual
+    y: predicted
+    title: Test Confusion Matrix
+    x_label: True Label
+    y_label: Predicted Label
+- dvclive/plots/custom/iris_feature_importance.json:
+    template: bar_horizontal
+    x: importance
+    y: name
+    title: 'Iris Dataset: Feature Importance'
+    x_label: Feature Importance
+    y_label: Feature Name
