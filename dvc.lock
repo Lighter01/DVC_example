@@ -42,5 +42,5 @@ stages:
       size: 1071
     - path: src/test.py
       hash: md5
-      md5: c3c1897b2839d0178a7929d6b0ce7331
-      size: 2253
+      md5: fc554095885feb4c5907873b25819a80
+      size: 2229

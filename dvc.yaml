@@ -19,6 +19,8 @@ stages:
     - models/logistic_regression.pkl
     - src/test.py
 plots:
+- dvclive/plots/metrics:
+    x: step
 - dvclive/plots/sklearn/test_confusion_matrix.json:
     template: confusion
     x: actual
@@ -33,3 +35,5 @@ plots:
     title: 'Iris Dataset: Feature Importance'
     x_label: Feature Importance
     y_label: Feature Name
+metrics:
+- dvclive/metrics.json
