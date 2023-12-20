@@ -8,7 +8,6 @@ from sklearn.metrics import precision_score, recall_score, f1_score, confusion_m
 from sklearn.preprocessing import StandardScaler
 
 import joblib
-import json
 import sys
 
 # if len(sys.argv) != 3:
@@ -58,6 +57,7 @@ datapoints = [{"name": name, "importance": importance} for name, importance in z
 with Live() as live:
     live.log_metric("test accuracy", accuracy, plot=True)
     live.log_metric("test f1 score", f1, plot=True)
+
     live.log_sklearn_plot(
         "confusion_matrix", 
         y, 

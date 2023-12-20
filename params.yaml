@@ -1,0 +1,10 @@
+# params.yaml
+prepare:
+ split: 0.3
+ seed: 42
+ 
+train:
+  n_jobs: 4
+  penalty: 'l2'
+  max_iter: 1000
+  solver: 'lbfgs'
