@@ -3,6 +3,9 @@ stages:
     cmd: python src/prepare.py
     deps:
     - src/prepare.py
+    params:
+    - prepare.seed
+    - prepare.split
     outs:
     - data/prepared
   train:
@@ -10,6 +13,11 @@ stages:
     deps:
     - data/prepared/train.csv
     - src/train.py
+    params:
+    - train.n_jobs
+    - train.penalty
+    - train.max_iter
+    - train.solver
     outs:
     - models/logistic_regression.pkl
   test:
