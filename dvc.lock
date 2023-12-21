@@ -5,8 +5,12 @@ stages:
     deps:
     - path: src/prepare.py
       hash: md5
-      md5: a0ef28d36b5e9ca1df8b0500f9ece064
-      size: 633
+      md5: 84e042f01c039469361cf2f0b812fd66
+      size: 881
+    params:
+      params.yaml:
+        prepare.seed: 42
+        prepare.split: 0.3
     outs:
     - path: data/prepared
       hash: md5
@@ -22,8 +26,14 @@ stages:
       size: 2053
     - path: src/train.py
       hash: md5
-      md5: 58a53e7460ec70c36c2f8958847a09d6
-      size: 1552
+      md5: 7e9e5d3025a3a1beb827d541fc2d828a
+      size: 2700
+    params:
+      params.yaml:
+        train.max_iter: 1000
+        train.n_jobs: 4
+        train.penalty: l2
+        train.solver: lbfgs
     outs:
     - path: models/logistic_regression.pkl
       hash: md5
@@ -42,5 +52,5 @@ stages:
       size: 1071
     - path: src/test.py
       hash: md5
-      md5: fc554095885feb4c5907873b25819a80
-      size: 2229
+      md5: e2375be448c2f713533fb505cb4c670b
+      size: 2218
