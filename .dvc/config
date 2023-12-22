@@ -1,0 +1,4 @@
+[core]
+    remote = dvc_origin
+['remote "dvc_origin"']
+    url = https://github.com/Lighter01/DVC_example.git

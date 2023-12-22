@@ -1,2 +1,2 @@
-step	test accuracy
+step	test_f1_score
 0	0.9555555555555556
