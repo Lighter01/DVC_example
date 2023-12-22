@@ -73,15 +73,15 @@ joblib_logr = 'models/logistic_regression.pkl'
 joblib.dump(log_r, joblib_logr)
 
 with Live() as live:
-    live.log_metric("test accuracy", accuracy, plot=True)
-    live.log_metric("test f1 score", f1, plot=True)
+    live.log_metric("train_accuracy", accuracy, plot=True)
+    live.log_metric("train_f1_score", f1, plot=True)
 
     live.log_sklearn_plot(
         "confusion_matrix", 
         y_train, 
         predictions, 
         name="train_confusion_matrix",
-        title="Test Confusion Matrix")
+        title="Train Confusion Matrix")
 
     live.log_plot(
         "iris_feature_importance_train",

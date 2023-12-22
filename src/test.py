@@ -55,8 +55,8 @@ f_names = df_test.drop(columns=['target']).columns
 datapoints = [{"name": name, "importance": importance} for name, importance in zip(f_names, f_importance)]
 
 with Live() as live:
-    live.log_metric("test accuracy", accuracy, plot=True)
-    live.log_metric("test f1 score", f1, plot=True)
+    live.log_metric("test_accuracy", accuracy, plot=True)
+    live.log_metric("test_f1_score", f1, plot=True)
 
     live.log_sklearn_plot(
         "confusion_matrix", 
