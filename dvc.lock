@@ -26,8 +26,8 @@ stages:
       size: 2053
     - path: src/train.py
       hash: md5
-      md5: 7e9e5d3025a3a1beb827d541fc2d828a
-      size: 2700
+      md5: 8a530d2ba45a17d325a413f11a0114ba
+      size: 2703
     params:
       params.yaml:
         train.max_iter: 1000
@@ -52,5 +52,5 @@ stages:
       size: 1071
     - path: src/test.py
       hash: md5
-      md5: e2375be448c2f713533fb505cb4c670b
+      md5: 29162e25dc19705a25467dbc1770fa21
       size: 2218
